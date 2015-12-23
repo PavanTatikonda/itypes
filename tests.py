@@ -1,5 +1,25 @@
 import itypes
+import pytest
 
+
+# [], .get()
+
+def test_dict_get():
+    orig = itypes.Dict({'a': 1, 'b': 2, 'c': 3})
+    assert orig.get('a') == 1
+    assert orig.get('z') is None
+
+def test_dict_lookup():
+    orig = itypes.Dict({'a': 1, 'b': 2, 'c': 3})
+    assert orig['a'] == 1
+    with pytest.raises(KeyError):
+        orig['zzz']
+
+def test_list_lookup():
+    orig = itypes.List(['a', 'b', 'c'])
+    assert orig[1] == 'b'
+    with pytest.raises(IndexError):
+        orig[999]
 
 # .delete(), .set()
 
@@ -25,6 +45,15 @@ def test_list_set():
     orig = itypes.List(['a', 'b', 'c'])
     new = orig.set(1, 'xxx')
     assert new == ['a', 'xxx', 'c']
+
+
+# .get_in()
+
+def test_get_in():
+    orig = itypes.Dict({'a': ['x', 'y', 'z'], 'b': 2, 'c': 3})
+    assert orig.get_in(['a', -1]) == 'z'
+    assert orig.get_in(['dummy', -1]) == None
+    assert orig.get_in(['a', 999]) == None
 
 
 # .delete_in(), .set_in()
