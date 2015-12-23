@@ -7,7 +7,7 @@ import os
 import sys
 
 
-def get_version(package):
+def get_version():
     """
     Return package version as listed in `__version__` in `init.py`.
     """
