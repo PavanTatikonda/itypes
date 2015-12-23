@@ -2,7 +2,7 @@
 *~
 .*
 
-/coreapi.egg-info/
+/*.egg-info/
 /dist/
 /env/
 /htmlcov/

@@ -34,7 +34,7 @@ setup(
     description='Simple immutable types for python.',
     author='Tom Christie',
     author_email='tom@tomchristie.com',
-    packages=['itypes.py'],
+    py_modules=['itypes'],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
