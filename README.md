@@ -7,6 +7,9 @@ A simple implementation that's designed for simplicity over performance.
 Use these in circumstances where it may result in more comprehensible code,
 or when you want to create custom types with restricted, immutable interfaces.
 
+For an alternative implementation designed for performance,
+please see [pyrsistent](https://github.com/tobgu/pyrsistent).
+
 ### Installation
 
 Install using `pip`:
