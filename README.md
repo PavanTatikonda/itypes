@@ -56,7 +56,7 @@ Method: `get_in(keys, default=None)`
     IndexError: list index out of range
     >>> d.get_in(['b', -1])
     'c'
-    >>> d.get_in(['b', 4])
+    >>> d.get_in(['b', 5])
     None
 
 ### Nested assignments and deletions.
