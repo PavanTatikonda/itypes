@@ -16,7 +16,7 @@ Install using `pip`:
 
     pip install itypes
 
-### Dictionaries and lists are supported.
+### Instantiating dictionaries and lists.
 
     >>> import itypes
     >>> d = itypes.Dict({'a': 1, 'b': 2, 'c': 3})
@@ -121,3 +121,31 @@ Using the custom class:
     Configuration({'dynos': 2, 'hostname': 'example.com'})
     >>> new.title
     'worker-process'
+
+### Custom immutable objects.
+
+Subclass `itypes.Object` for an object that prevents setting public attributes.
+
+    >>> class Custom(itypes.Object):
+    ...     pass
+
+Only private attribute names may be set on instances. Use `@property` for attribute access.
+
+    >>> class Document(itypes.Object):
+    ... def __init__(self, title, content):
+    ...     self._title = title
+    ...     self._content = title
+    ... @property
+    ... def title(self):
+    ...     return self._title
+    ... @property
+    ... def content(self):
+    ...     return self._content
+
+Using immutable objects:
+
+    >>> doc = Document(title='Immutability', content='For simplicity')
+    >>> doc.title
+    'Immutability'
+    >>> doc.title = 'Changed'
+    TypeError: 'Document' object doesn't support property assignment.
