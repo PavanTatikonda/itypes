@@ -2,7 +2,7 @@
 from collections import Mapping, Sequence
 
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 
 def to_mutable(instance):
@@ -85,6 +85,14 @@ def _get_in(node, keys, default=None):
     if len(keys) == 1:
         return child
     return child.get_in(keys[1:], default=default)
+
+
+class Object(object):
+    def __setattr__(self, key, value):
+        if key.startswith('_'):
+            return object.__setattr__(self, key, value)
+        msg = "'%s' object doesn't support property assignment."
+        raise TypeError(msg % self.__class__.__name__)
 
 
 class Dict(Mapping):

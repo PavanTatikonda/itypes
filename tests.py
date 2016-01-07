@@ -87,3 +87,14 @@ def test_set_in():
     orig = itypes.Dict({'a': ['x', 'y', 'z'], 'b': 2, 'c': 3})
     new = orig.set_in([], 'yyy')
     assert new == 'yyy'
+
+
+# Objects
+
+def test_setting_object_property():
+    class Example(itypes.Object):
+        pass
+
+    example = Example()
+    with pytest.raises(TypeError):
+        example.a = 123
