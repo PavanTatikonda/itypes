@@ -1,0 +1,6 @@
+# Testing requirements
+flake8
+pytest
+
+# Packaging requirements
+wheel
