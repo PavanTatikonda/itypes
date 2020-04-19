@@ -39,6 +39,7 @@ setup(
     license='BSD',
     description='Simple immutable types for python.',
     long_description=read('README.md'),
+    long_description_content_type="text/markdown",
     author='Tom Christie',
     author_email='tom@tomchristie.com',
     py_modules=['itypes'],
