@@ -26,6 +26,12 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 
+def read(fname):
+    with open(fname) as fp:
+        content = fp.read()
+    return content
+
+
 setup(
     name='itypes',
     version=version,
