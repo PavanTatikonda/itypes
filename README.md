@@ -1,6 +1,6 @@
 # itypes
 
-[![Build Status](https://travis-ci.org/tomchristie/itypes.svg?branch=master)](https://travis-ci.org/tomchristie/itypes)
+[![Build Status](https://travis-ci.org/PavanTatikonda/itypes.svg?branch=master)](https://travis-ci.org/PavanTatikonda/itypes)
 
 Basic immutable container types for Python.
 

@@ -1,8 +1,11 @@
 # coding: utf-8
-from collections import Mapping, Sequence
+try:
+    from collections.abc import Mapping, Sequence
+except ImportError:  # support for python 2.x
+    from collections import Mapping, Sequence
 
 
-__version__ = '1.1.0'
+__version__ = '1.2.0'
 
 
 def to_mutable(instance):
