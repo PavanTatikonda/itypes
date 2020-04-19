@@ -29,14 +29,15 @@ if sys.argv[-1] == 'publish':
 setup(
     name='itypes',
     version=version,
-    url='http://github.com/tomchristie/itypes',
+    url='http://github.com/PavanTatikonda/itypes',
     license='BSD',
     description='Simple immutable types for python.',
+    long_description=read('README.md'),
     author='Tom Christie',
     author_email='tom@tomchristie.com',
     py_modules=['itypes'],
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
